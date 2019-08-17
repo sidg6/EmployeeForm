@@ -1,5 +1,5 @@
 
-var requestURL = "http://localhost:8080/Test/json_demo.json"
+var requestURL = "http://localhost:8080/EmployeeForm/json_demo.json"
 var xmlhttp = new XMLHttpRequest();
 
 var readData;
