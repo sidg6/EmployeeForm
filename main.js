@@ -6,7 +6,7 @@ var readData;
 var modifyData;
 var employeeToDelete;
 
-function readData(pageToLoad){
+const readDataFromServer = (pageToLoad) => {
 	xmlhttp.onreadystatechange = () =>{
 		if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 			var myJsonData = xmlhttp.response;
@@ -19,7 +19,7 @@ function readData(pageToLoad){
 		xmlhttp.send();
 	}
 
-function fetchData(cacheEmployeeData, pageToLoad){
+const fetchData = (cacheEmployeeData, pageToLoad) => {
 	if(cacheEmployeeData!=undefined){
 		var data = cacheEmployeeData;
 		readData = data;
@@ -35,7 +35,7 @@ function fetchData(cacheEmployeeData, pageToLoad){
 	}
 }
 
-function populateData(parent, data, i, pageToLoad){
+const populateData = (parent, data, i, pageToLoad) => {
 	if(pageToLoad === "editEmployeePage"){
 		var child = document.createElement("td");
 		var child1 = document.createElement("td");
@@ -73,7 +73,7 @@ function populateData(parent, data, i, pageToLoad){
 	}
 }
 
-function sendData(data){
+const sendData = (data) => {
 	xmlhttp.open("POST",requestURL);
 	xmlhttp.responseType= 'json';
 	xmlhttp.send(data);
@@ -83,7 +83,7 @@ function sendData(data){
 
 
 
-function employeeDetailsPage(myData,pageToLoad){
+const employeeDetailsPage = (myData,pageToLoad) => {
 	var data;
 	if(pageToLoad === "editEmployeePage"){
 		data = myData;
@@ -106,7 +106,7 @@ function employeeDetailsPage(myData,pageToLoad){
 }
 
 
-function myModal(data){
+const myModal = (data) => {
 	var employeeToBeDeleted = data.preferredFullName;
 	document.getElementsByClassName("person-deleted")[0].innerHTML = "\""+employeeToBeDeleted+"\"";
 	document.getElementsByClassName("person-deleted")[0].style.color="#aaa222";
@@ -114,19 +114,19 @@ function myModal(data){
 	employeeToDelete = data;
 }
 
-window.addEventListener("click", closeModalByClickingOutside);
-
-function closeModal(){
+const closeModal = () => {
 	document.getElementById("deleteModal").style.display = "none";
 }
 
-function closeModalByClickingOutside(e){
+
+const closeModalByClickingOutside = (e) => {
 	if(e.target == document.getElementById("deleteModal")){
 		document.getElementById("deleteModal").style.display = "none";
 	}
 }
 
-function deleteEmployee(){
+window.addEventListener("click", closeModalByClickingOutside);
+const deleteEmployee = () => {
 	var checkDeleteEmployee = employeeToDelete.employeeCode;
 	var size = readData.length;
 	for(var i=0;i<size;i++){
@@ -142,7 +142,7 @@ function deleteEmployee(){
 }
 
 
-function editEmployee(data){
+const editEmployee = (data) => {
 	var updateEmployee = data.employeeCode;
 	var oldModifiedData = modifyData;
 	var size = oldModifiedData.length;

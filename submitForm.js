@@ -21,7 +21,7 @@ var submitForm = (pageType) => {
 			}
 		}
 	if((document.getElementById("jobTitle").value!="")){
-		if((/^[a-z]+$/i).test(document.getElementById("jobTitle").value)){
+		if((/^[a-z]{1,}\s{0,1}[a-z]+$/i).test(document.getElementById("jobTitle").value)){
 			formData.jobTitleName=document.getElementById("jobTitle").value;
 			if((document.getElementById("jobTitle").nextSibling.className=="error")){
 				document.getElementsByClassName("error")[0].remove();
@@ -108,7 +108,7 @@ var submitForm = (pageType) => {
 		}
 
 	if((document.getElementById("region").value!="")){
-		if((/^[a-z]+$/i).test(document.getElementById("region").value)){
+		if((/^[a-z]{1,}\s{0,1}[a-z]+$/i).test(document.getElementById("region").value)){
 			formData.region=document.getElementById("region").value;
 			if((document.getElementById("region").nextSibling.className=="error")){
 				document.getElementsByClassName("error")[0].remove();
