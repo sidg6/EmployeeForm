@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Create Employee</title>
+	<link type="text/css" rel="stylesheet" href="main.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="main.js"></script>
+</head>
+
+<body>
+	<div id="createEmployee" class="container">
+		<h1>Employee Details Form</h1>
+		<form onsubmit="return submitForm('createEmployee')" action="EmployeeDetailsPage.html">
+			<label class="label">User Id</label>
+			</br>
+			<input type="text" maxlength=8 id="userId" placeholder="Enter the userId" value="" required>
+			</br>
+			<label class="label">Job Title</label>
+			</br>
+			<input type="text" maxlength=50 id="jobTitle" placeholder="Enter the job title" value="" required>
+			</br>
+			<label class="label">First Name</label>
+			</br>
+			<input type="text" maxlength=25 id="firstName" placeholder="Enter the first name" value="" required>
+			</br>
+			<label class="label">Last Name</label>
+			</br>
+			<input type="text" maxlength=25 id="lastName" placeholder="Enter the last name" value="" required>
+			</br>
+			<label class="label">Employee Code</label>
+			</br>
+			<input type="text" maxlength=8 id="employeeCode" placeholder="Enter the employee code" value="" required>
+			</br>
+			<label class="label">Region</label>
+			</br>
+			<input type="text" maxlength=20 id="region" placeholder="Enter the region" value="" required>
+			</br>
+			<label class="label">Mobile Number</label>
+			</br>
+			<input type="text" maxlength=10 id="mobileNumber" placeholder="Enter the mobile number" value="" required>
+			</br>
+			<label class="label">Email Id</label>
+			</br>
+			<input type="text" maxlength=50 id="emailId" placeholder="Enter the email Id" value="" required>
+			</br>
+			<button class="submit">Submit</button>
+		</form>
+	</div>
+	<a href="index.html"><button>Return to Home Page</button></a>
+
+<script src="submitForm.js"></script>
+	
+</body>
+
+</html>

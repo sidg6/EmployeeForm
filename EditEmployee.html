@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit Employee Details</title>
+	<link type="text/css" rel="stylesheet" href="main.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="main.js"></script>
+	<script>
+		window.onload=()=>{
+			readData("editEmployeePage");
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<h1>Employees List</h1>
+		<table id="employeeData">
+			<thead>
+				<th id="user-id">UserId</th>
+				<th id="job-title">Title</th>
+				<th id="name">Full Name</th>
+				<th id="editUser">Edit Details</th>
+				<th id="deleteUser">Delete User</th>
+			</thead>
+			<tbody id="employeeDataBody">		
+			</tbody>
+		</table>
+		<div id="editEmployee" class="container" style="display:none;">
+			<form onsubmit="return submitForm('editEmployeePage')">
+				<label class="label">User Id</label>
+				</br>
+				<input type="text" maxlength=8 id="userId" >
+				</br>
+				<label class="label">Job Title</label>
+				</br>
+				<input type="text" maxlength=50 id="jobTitle" >
+				</br>
+				<label class="label">First Name</label>
+				</br>
+				<input type="text" maxlength=25 id="firstName">
+				</br>
+				<label class="label">Last Name</label>
+				</br>
+				<input type="text" maxlength=25 id="lastName" >
+				</br>
+				<label class="label">Full Name</label>
+				</br>
+				<input type="text" maxlength=50 id="fullName" disabled="disabled">
+				</br>
+				<label class="label">Employee Code</label>
+				</br>
+				<input type="text" maxlength=8 id="employeeCode" disabled="disabled">
+				</br>
+				<label class="label">Region</label>
+				</br>
+				<input type="text" maxlength=20 id="region">
+				</br>
+				<label class="label">Mobile Number</label>
+				</br>
+				<input type="text" maxlength=10 id="mobileNumber" >
+				</br>
+				<label class="label">Email Id</label>
+				</br>
+				<input type="text" maxlength=50 id="emailId">
+				</br>
+				<button class="submit">Submit</button>
+			</form>
+		</div> 
+		<a href="index.html"><button>Return to Home Page</button></a>
+	</div>
+	<div id="deleteModal" class="modal" style="display:none;">
+		<div class="modal-content">
+			<div id="modal-header" class="deleteHeader">
+				<span class="closeBtn" onclick="closeModal();">&times;</span>
+				<h2>Delete Employee</h2>
+			</div>
+			<div class="modal-body">
+				<p>Are you sure you want to delete <em class="person-deleted"></em></p>
+			</div>
+			<div class="modal-footer">
+				<button class="agree" onclick="deleteEmployee(); closeModal();">Yes</button> 
+				<button class="cancel" onclick="closeModal();">No</button>
+			</div>
+		</div>
+	</div>
+	<script src="submitForm.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
